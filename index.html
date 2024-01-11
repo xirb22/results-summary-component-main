@@ -5,43 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Results summary component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Your Result
-  76
-  of 100
+  <div class="container">
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="result">
+      <div class="title result-title">
+        Your Result
+      </div>
+      <div class="result-circle">
+        <div class="result-number-main">
+          76
+        </div>
+        <div class="result-number-static">
+          of 100
+        </div>
+      </div>
+      <div class="result-description-title">
+        Great
+      </div>
+      <div class="result-description">
+        You scored higher than 65% of the people who have taken these tests.
+      </div>
+    </div>
+    
+    <div class="summary">
+      <div class="title summary-title">
+        Summary
+      </div>
+      <div class="summary-data-wrapper">
+        <div class="summary-data summary-reaction">
+          <div class="summary-reaction-title">
+            Reaction
+          </div>
+          <div class="summary-reaction-data">
+            80 / 100
+          </div>
+        </div>
+        <div class="summary-data summary-memory">
+          <div class="summary-memory-title">
+            Memory
+          </div>
+          <div class="summary-memory-data">
+            92 / 100
+          </div>
+        </div>
+        <div class="summary-data summary-verbal">
+          <div class="summary-verbal-title">
+            Verbal
+          </div>
+          <div class="summary-verbal-data">
+            61 / 100
+          </div>
+        </div>
+        <div class="summary-data summary-visual">
+          <div class="summary-visual-title">
+            Visual
+          </div>
+          <div class="summary-visual-data">
+            72 / 100
+          </div>
+        </div>
+      </div>
+      <div class="summary-button-continue">
+        Continue
+      </div>
+    </div>
   </div>
+
+  
+ 
+
+
+  
+  
+
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
 </body>
 </html>
