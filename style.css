@@ -170,6 +170,7 @@ body {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: nowrap;
 
     border-radius: .5rem;
@@ -179,8 +180,11 @@ body {
     font-size: 0.75rem;
 }
 
+.summary-row > img {
+        flex-basis: 10%;
+}
 .summary-number-static {
-
+    color: grey;
 }
 
 /* ## Reaction */
@@ -190,7 +194,8 @@ body {
 }
 
 .summary-title-reaction {
-    color: var(--clr-lightred)
+    color: var(--clr-lightred);
+    flex-basis: 70%;
 }
 
 /* ## Memory  */
@@ -199,7 +204,9 @@ body {
 }
 
 .summary-title-memory {
-    color: var(--clr-orangeyellow)
+    color: var(--clr-orangeyellow);
+    flex-basis: 70%;
+
 }
 
 /* ## Verbal  */
@@ -209,7 +216,9 @@ body {
 }
 
 .summary-title-verbal {
-    color: var(--clr-greenteal)
+    color: var(--clr-greenteal);
+    flex-basis: 70%;
+
 }
 
 /* ## Visual  */
@@ -219,7 +228,9 @@ body {
 }
 
 .summary-title-visual {
-    color: var(--clr-lightroyalblue)
+    color: var(--clr-lightroyalblue);
+    flex-basis: 70%;
+
 }
 
 
@@ -240,11 +251,25 @@ body {
 @media screen and (max-width: 600px) {
 
     .container {
+
+        width: 100vw;
+
         flex-direction: column;
         justify-content: center;
+
+    }
+
+    .result {
+        width: 100vw;
+
+        border-radius: 0rem 0rem 1rem 1rem;
+
+
     }
 
     .summary {
+
+        width: 100vw;
 
         border-radius: 0px;
         box-shadow: none;
