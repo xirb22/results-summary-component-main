@@ -1,17 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 
-* {
+/* * {
     border: 2px solid red;
-}
+} */
 
 :root {
 
     /* # Primary colors */
     --clr-lightred: hsl(0, 100%, 67%);
+    --clr-lightred-dim: hsla(0, 100%, 67%, 15%);
+
     --clr-orangeyellow: hsl(39, 100%, 56%);
+    --clr-orangeyellow-dim: hsla(39, 100%, 56%,15%);
+
     --clr-greenteal: hsl(166, 100%, 37%);
+    --clr-greenteal-dim: hsla(166, 100%, 37%, 15%);
+
     --clr-cobaltblue: hsl(234, 85%, 45%);
+    --clr-cobaltblue-dim: hsl(234, 85%, 45%, 15%);
+
 
     /* # Gradients */
     /* ## Background */
@@ -24,7 +32,7 @@
 
     /* # Neutral colors */
     --clr-white: hsl(0, 0%, 100%);
-    --clr_paleblue: hsl(221, 100%, 96%);
+    --clr-paleblue: hsl(221, 100%, 96%);
     --clr-lightlavender: hsl(241, 100%, 89%);
     --clr-darkgrayblue: hsl(224, 30%, 27%);
 
@@ -40,32 +48,206 @@ html {
     font-family: 'Hanken Grotesk', sans-serif;
 }
 
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
 .container {
     display: flex;
     flex-direction: row;
+
+    flex-wrap: wrap;
 }
 
-.result {
 
-    width:50%;
+/* # Result page  */
+
+.result {
+    
+    width:17rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     text-align: center;
+    color: var(--clr-white);
+    
+    border-radius: 1rem;
+
+    background :linear-gradient(
+     var(--clr-lightslateblue),
+     var(--clr-lightroyalblue));
 }
+
+.result-title {
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--clr-lightlavender);
+
+    margin-block: 1.5rem;
+}
+
+.result-circle {
+
+    padding: 2rem 2.7rem; 
+    /*TODO need better solution for making circle round */
+
+    border-radius: 50%;
+
+    background :linear-gradient(
+        var(--clr-violetblue), 
+            var(--clr-persianblue));
+}
+
+.result-number-main {
+
+    font-size: 3rem;
+    font-weight: 800;
+
+}
+
+.result-number-static {
+    font-size: .75rem;
+    font-weight: 800;
+    color: var(--clr-lightslateblue);
+
+}
+
+.result-description-title {
+    
+    font-size: 1.25rem;
+    font-weight: 700;
+    
+
+    margin-top: 1rem;
+}
+
+.result-description {
+    
+    font-size: .75rem;
+    color: var(--clr-lightlavender);
+
+    margin: 1rem 3rem 2rem 3rem;
+}
+
+
+/* # Summary page  */
 
 .summary {
 
-    width:50%;
+    width: 17rem;
 
     display: flex;
     flex-direction: column;
+
+    border-radius: 0rem 1rem 1rem 0rem;
+
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
 }
 
-.summary-data {
+
+
+.summary-title {
+
+    margin: 1.5rem 2rem;
+
+    font-weight: 700;
+}
+
+.summary-row {
 
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin: 1rem 2rem;
+
+    font-size: 0.75rem;
+}
+
+.summary-number-static {
+
+}
+
+/* ## Reaction */
+
+.summary-reaction {
+    background-color: var(--clr-lightred-dim);
+}
+
+.summary-title-reaction {
+    color: var(--clr-lightred)
+}
+
+/* ## Memory  */
+.summary-memory {
+    background-color: var(--clr-orangeyellow-dim)
+}
+
+.summary-title-memory {
+    color: var(--clr-orangeyellow)
+}
+
+/* ## Verbal  */
+
+.summary-verbal {
+    background-color: var(--clr-greenteal-dim);
+}
+
+.summary-title-verbal {
+    color: var(--clr-greenteal)
+}
+
+/* ## Visual  */
+
+.summary-visual {
+    background-color: var(--clr-cobaltblue-dim);
+}
+
+.summary-title-visual {
+    color: var(--clr-lightroyalblue)
+}
+
+
+.summary-button-continue {
+    background-color: var(--clr-darkgrayblue);
+
+    color: var(--clr-white);
+
+    margin: 1rem 2rem;
+    padding: .5rem;
+
+    border-radius: 2rem;
+
+    text-align: center;
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .summary {
+
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
 }
