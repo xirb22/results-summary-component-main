@@ -315,4 +315,12 @@ body {
         box-shadow: none;
     }
 
+    .summary-title {
+        margin-block-start: 1rem;
+    }
+
+    .summary-button-continue {
+        margin-block: 1rem;
+    }
+
 }
