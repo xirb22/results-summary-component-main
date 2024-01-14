@@ -282,32 +282,30 @@ body {
 
 @media screen and (max-width: 600px) {
 
-    html {
-        border: 2px solid blue;
-    }
-
     body {
         margin: 0;
     }
 
     .container {
         min-width: 100vw;
+        min-height: 100vh;
         flex-direction: column;
         justify-content: center;
 
         box-shadow: none;
 
-        border: 2px solid red;
-
     }
 
     .result {
         width: 100vw;
+        min-height: 50svh;
+
         border-radius: 0rem 0rem 1rem 1rem;
     }
 
     .summary {
         width: 100vw;
+        min-height: 50svh;
         border-radius: 0px;
         box-shadow: none;
     }
