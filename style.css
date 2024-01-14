@@ -9,16 +9,16 @@
 
     /* # Primary colors */
     --clr-lightred: hsl(0, 100%, 67%);
-    --clr-lightred-dim: hsla(0, 100%, 67%, 15%);
+    --clr-lightred-dim: hsla(0, 100%, 67%, 5%);
 
     --clr-orangeyellow: hsl(39, 100%, 56%);
-    --clr-orangeyellow-dim: hsla(39, 100%, 56%,15%);
+    --clr-orangeyellow-dim: hsla(39, 100%, 56%,5%);
 
     --clr-greenteal: hsl(166, 100%, 37%);
-    --clr-greenteal-dim: hsla(166, 100%, 37%, 15%);
+    --clr-greenteal-dim: hsla(166, 100%, 37%, 5%);
 
     --clr-cobaltblue: hsl(234, 85%, 45%);
-    --clr-cobaltblue-dim: hsl(234, 85%, 45%, 15%);
+    --clr-cobaltblue-dim: hsl(234, 85%, 45%, 5%);
 
 
     /* # Gradients */
@@ -40,6 +40,9 @@
     Use transparency to get the colour variations necessary to match the design. 
     Hint: look into using `hsla()`. 
     */
+
+    /* Shadow color */
+    --clr-shadow: hsla(214, 53%, 66%, 0.767);
 
 }
 
@@ -64,8 +67,10 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 3rem -2rem var(--clr-shadow);
 
-    flex-wrap: wrap;
 }
 
 
@@ -147,44 +152,64 @@ body {
 .summary {
 
     width: 17rem;
+    position: relative;
 
-    display: flex;
+    display: block;
     flex-direction: column;
 
     border-radius: 0rem 1rem 1rem 0rem;
 
-    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
-}
+    /* box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75); */
 
+    /* margin: 0rem -1rem; */
+}
 
 
 .summary-title {
 
-    margin: 1.5rem 2rem;
+    margin: 1.5rem 2rem 1rem 2rem;
 
     font-weight: 700;
+
+    color: var(--clr-darkgrayblue);
 }
+
+/* .summary-data-wrapper {
+    margin: 0rem 2rem;
+} */
 
 .summary-row {
 
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
 
     border-radius: .5rem;
-    padding: .5rem 1rem;
-    margin: 1rem 2rem;
+    padding: .7rem 1rem;
+    margin: .8rem 2rem;
 
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
 .summary-row > img {
-        flex-basis: 10%;
+        width: 0.75rem;
+        height: 0.75rem;
+        padding-right: .3rem;
 }
+
+/* .summary-row > * {
+    border: 3px solid red;
+} */
+
+.summary-data {
+    padding-inline: .3rem;
+    color: var(--clr-darkgrayblue);
+}
+
 .summary-number-static {
-    color: grey;
+    color: #00000055;
 }
 
 /* ## Reaction */
@@ -193,9 +218,10 @@ body {
     background-color: var(--clr-lightred-dim);
 }
 
-.summary-title-reaction {
+.summary-subtitle-reaction {
     color: var(--clr-lightred);
-    flex-basis: 70%;
+    /* flex-basis: 60%; */
+    flex-grow: 1;
 }
 
 /* ## Memory  */
@@ -203,11 +229,13 @@ body {
     background-color: var(--clr-orangeyellow-dim)
 }
 
-.summary-title-memory {
+.summary-subtitle-memory {
     color: var(--clr-orangeyellow);
-    flex-basis: 70%;
-
+    /* flex-basis: 60%; */
+    flex-grow: 1;
+    
 }
+
 
 /* ## Verbal  */
 
@@ -215,10 +243,11 @@ body {
     background-color: var(--clr-greenteal-dim);
 }
 
-.summary-title-verbal {
+.summary-subtitle-verbal {
     color: var(--clr-greenteal);
-    flex-basis: 70%;
-
+    /* flex-basis: 60%; */
+    flex-grow: 1;
+    
 }
 
 /* ## Visual  */
@@ -227,23 +256,26 @@ body {
     background-color: var(--clr-cobaltblue-dim);
 }
 
-.summary-title-visual {
+.summary-subtitle-visual {
     color: var(--clr-lightroyalblue);
-    flex-basis: 70%;
-
+    /* flex-basis: 60%; */
+    flex-grow: 1;
+    
 }
 
 
 .summary-button-continue {
+
     background-color: var(--clr-darkgrayblue);
 
     color: var(--clr-white);
 
-    margin: 1rem 2rem;
-    padding: .5rem;
+    margin: 2rem 2rem;
+    padding: .7rem;
 
     border-radius: 2rem;
 
+    font-size: .75rem;
     text-align: center;
 
 }
@@ -251,26 +283,21 @@ body {
 @media screen and (max-width: 600px) {
 
     .container {
-
-        width: 100vw;
-
+        min-width: 100vw;
         flex-direction: column;
         justify-content: center;
+
+        box-shadow: none;
 
     }
 
     .result {
         width: 100vw;
-
         border-radius: 0rem 0rem 1rem 1rem;
-
-
     }
 
     .summary {
-
         width: 100vw;
-
         border-radius: 0px;
         box-shadow: none;
     }
