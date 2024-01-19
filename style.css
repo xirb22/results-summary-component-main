@@ -27,7 +27,7 @@
     --clr-lightroyalblue: hsl(241, 81%, 54%);
 
     /* ## Circle */
-    --clr-violetblue: hsla(256, 72%, 46%, 1);
+    --clr-violetblue: rgba(78, 33, 202, 1);
     --clr-persianblue: hsla(241, 72%, 46%, 0);
 
     /* # Neutral colors */
@@ -53,12 +53,11 @@ html {
 
 
 body {
-    width: 100vw;
     height: 100vh;
-
     display:flex;
     justify-content: center;
     align-items: center;
+    margin:0;
 
 }
 
@@ -67,6 +66,8 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+
+    /* max-width: 50%; */
     
     border-radius: 1rem;
     box-shadow: 1rem 1rem 3rem -2rem var(--clr-shadow);
@@ -78,8 +79,6 @@ body {
 
 .result {
     
-    width:17rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,9 +88,14 @@ body {
     
     border-radius: 1rem;
 
+
+    max-width: 50%;
+
     background :linear-gradient(
      var(--clr-lightslateblue),
      var(--clr-lightroyalblue));
+
+
 }
 
 .result-title {
@@ -110,9 +114,9 @@ body {
 
     border-radius: 50%;
 
-    background :linear-gradient(
-        var(--clr-violetblue), 
-            var(--clr-persianblue));
+    background : linear-gradient(
+        var(--clr-violetblue),
+            var(--clr-persianblue) );
 }
 
 .result-number-main {
@@ -143,7 +147,8 @@ body {
     font-size: .75rem;
     color: var(--clr-lightlavender);
 
-    margin: 1rem 3rem 2rem 3rem;
+    max-width: 60%;
+    margin-block: 1rem 2rem;
 }
 
 
@@ -151,32 +156,28 @@ body {
 
 .summary {
 
-    width: 17rem;
     position: relative;
+    margin: 1.5rem 1.5rem;
 
-    display: block;
+    display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 
     border-radius: 0rem 1rem 1rem 0rem;
 
-    /* box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75); */
+    max-width: 50%;
 
-    /* margin: 0rem -1rem; */
 }
 
 
 .summary-title {
-
-    margin: 1.5rem 2rem 1rem 2rem;
 
     font-weight: 700;
 
     color: var(--clr-darkgrayblue);
 }
 
-/* .summary-data-wrapper {
-    margin: 0rem 2rem;
-} */
 
 .summary-row {
 
@@ -186,8 +187,8 @@ body {
     flex-wrap: nowrap;
 
     border-radius: .5rem;
-    padding: .7rem 1rem;
-    margin: .8rem 2rem;
+    padding: .75rem;
+    /* margin: .8rem 2rem; */
 
     font-size: 0.8rem;
     font-weight: 700;
@@ -199,9 +200,6 @@ body {
         padding-right: .3rem;
 }
 
-/* .summary-row > * {
-    border: 3px solid red;
-} */
 
 .summary-data {
     padding-inline: .3rem;
@@ -220,7 +218,6 @@ body {
 
 .summary-subtitle-reaction {
     color: var(--clr-lightred);
-    /* flex-basis: 60%; */
     flex-grow: 1;
 }
 
@@ -231,7 +228,6 @@ body {
 
 .summary-subtitle-memory {
     color: var(--clr-orangeyellow);
-    /* flex-basis: 60%; */
     flex-grow: 1;
     
 }
@@ -245,7 +241,6 @@ body {
 
 .summary-subtitle-verbal {
     color: var(--clr-greenteal);
-    /* flex-basis: 60%; */
     flex-grow: 1;
     
 }
@@ -258,11 +253,9 @@ body {
 
 .summary-subtitle-visual {
     color: var(--clr-lightroyalblue);
-    /* flex-basis: 60%; */
     flex-grow: 1;
     
 }
-
 
 .summary-button-continue {
 
@@ -270,8 +263,8 @@ body {
 
     color: var(--clr-white);
 
-    margin: 2rem 2rem;
     padding: .7rem;
+    margin-block: 1rem;
 
     border-radius: 2rem;
 
@@ -280,14 +273,10 @@ body {
 
 }
 
-@media screen and (max-width: 600px) {
-
-    body {
-        margin: 0;
-    }
+@media screen and (max-width: 700px) {
 
     .container {
-        min-width: 100vw;
+        max-width: 100vw;
         min-height: 100vh;
         flex-direction: column;
         justify-content: center;
@@ -297,30 +286,22 @@ body {
     }
 
     .result {
-        width: 100vw;
-        min-height: 40svh;
-
+        max-width: 100vw;
         border-radius: 0rem 0rem 1rem 1rem;
     }
 
-    .result-description {
-        margin-top: .5rem;
-        margin-bottom: 2rem;
-    }
-
     .summary {
-        width: 100vw;
-        min-height: 40svh;
-        border-radius: 0px;
-        box-shadow: none;
+        max-width: 100vw;
+        
     }
 
-    .summary-title {
-        margin-block-start: 1rem;
+    .summary-row {
+        padding: 1rem
     }
 
     .summary-button-continue {
-        margin-block: 1rem;
+        margin-block: .5rem;
+        padding-block: 1rem
     }
 
 }
